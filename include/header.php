@@ -23,6 +23,6 @@
 		<div id="menubox"><a href="contact.php">Contact</a></div>
 	</nav>
 </menu>
-<?php	$bdd = mysql_connect('mysql51-110.perso', 'easyelobsql', '2BNG5tqTx6UH'); 
-		mysql_select_db('easyelobsql', $bdd); ?>
+<?php	$bdd = mysql_connect('server', 'user', 'pass'); 
+		mysql_select_db('bdd', $bdd); ?>
 <?php include("function.php"); ?>
