@@ -13,7 +13,7 @@
 </header>
 <menu>
 	<nav>
-		<div id="menubox"><a href="/">Accueil</a></div>
+		<div id="menubox"><a href="index.php">Accueil</a></div>
 <!--		<div id="menubox"><a href="news.php">News</a></div> -->
 		<div id="menubox"><a href="team.php">Équipe</a></div>
 <!--		<div id="menubox"><a href="tournois.php">Tournois</a></div>-->
@@ -23,6 +23,6 @@
 		<div id="menubox"><a href="contact.php">Contact</a></div>
 	</nav>
 </menu>
-<?php	$bdd = mysql_connect('server', 'user', 'pass'); 
-		mysql_select_db('bdd', $bdd); ?>
+<?php	$bdd = mysqli_connect('localhost', 'seriouslee-data', 'azerty1234'); 
+		mysqli_select_db($bdd, 'seriouslee'); ?>
 <?php include("function.php"); ?>

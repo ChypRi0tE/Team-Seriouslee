@@ -1,13 +1,13 @@
-<?php	$bdd = mysql_connect('localhost', 'root', 'root'); 
-		mysql_select_db('easyelobsql', $bdd); ?>
+<?php	$bdd = mysqli_connect('localhost', 'seriouslee-data', 'azerty1234'); 
+		mysqli_select_db($bdd, 'seriouslee'); ?>
 <section id="last_results">
 	<h3>Derniers résultats</h3>
 	<table>
 		<thead style="border-bottom:1px solid white;">
 			<th>Type</th><th>Adversaire</th><th>Résultat</th><th>Médias</th>
 		</thead>
-<?php $reponse = mysql_query('SELECT * FROM srs_videos ORDER BY date DESC, magic DESC, numero DESC LIMIT 0, 15');
-	while ($data = mysql_fetch_assoc($reponse)) {
+<?php $reponse = mysqli_query($bdd, 'SELECT * FROM srs_videos ORDER BY date DESC, magic DESC, numero DESC LIMIT 0, 15');
+	while ($data = mysqli_fetch_assoc($reponse)) {
 		echo "<tr><td style=\"color:white\">" .$data['type']. " #" .$data['numero']. "</td>
 		<td class=\"name\">";
 			echo "<a href=\"watch.php?ID=".$data['ID']."\">" .$data['adversaire']."</a>";

@@ -1,7 +1,7 @@
 <?php $id = $_GET['ID']; 
 	$requete = 'SELECT * FROM srs_videos WHERE ID=' .$id;
-	$req = mysql_query($requete);
-	$data = mysql_fetch_assoc($req);
+	$req = mysqli_query($bdd, $requete);
+	$data = mysqli_fetch_assoc($req);
 ?>
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
 	<link rel="stylesheet" type="text/css" href="css/jquery.datepick.css"> 
@@ -37,7 +37,7 @@ $(function() {
 						replay=\'' .$replay. '\',
 						magic=\'' .$magic. '\'
 					WHERE ID=' .$id);
-		mysql_query($requete);
+		mysqli_query($bdd, $requete);
 		$requete=('UPDATE srs_lineup
 					SET chypriote=\'' .$chypriote. '\',
 						pyoup=\'' .$pyoup. '\',
@@ -45,7 +45,7 @@ $(function() {
 						narmouk=\'' .$narmouk. '\',
 						fred=\'' .$fred. '\'
 					WHERE id_game=' .$id);
-		mysql_query($requete);
+		mysqli_query($bdd, $requete);
 	}
 ?>
 <h1>Editez la vid&eacute;o <?php echo "#".$id; ?></h1>

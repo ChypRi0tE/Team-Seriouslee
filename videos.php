@@ -11,9 +11,9 @@
 	<section id="videos">
 	<h1>Toutes les vid&eacute;os</h1>
 <?php	$requete='SELECT * FROM srs_videos ORDER BY date DESC, magic DESC, numero DESC';
-	$req = mysql_query($requete);
+	$req = mysqli_query($bdd, $requete);
 	$n = 0;
-	while ($data = mysql_fetch_assoc($req)) { 
+	while ($data = mysqli_fetch_assoc($req)) { 
 		if ($data['link']) {
 			$link = substr($data['link'], 32);
 		?>
